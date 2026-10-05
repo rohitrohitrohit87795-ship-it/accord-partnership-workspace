@@ -1,0 +1,31 @@
+{
+  "name": "accord-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --watch src/index.cjs",
+    "start": "node scripts/start-local.cjs",
+    "chain": "hardhat node --hostname 127.0.0.1",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.cjs --network localhost",
+    "test": "node --test tests/accounts.test.cjs tests/mongodb.test.cjs tests/chain-journal.test.cjs",
+    "test:contracts": "hardhat test",
+    "test:chain-api": "node --test tests/chain.integration.cjs",
+    "auditor": "node scripts/auditor.cjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.15.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.1.0",
+    "hardhat": "^2.28.0",
+    "solc": "0.8.28"
+  }
+}

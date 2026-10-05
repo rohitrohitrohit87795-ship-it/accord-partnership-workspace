@@ -1,0 +1,23 @@
+{
+  "name": "accord-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test:browser": "node tests/personal-browser.cjs",
+    "test:wallet": "node --test tests/wallet-network.test.mjs && node tests/wallet-connect-browser.cjs",
+    "test:live-browser": "node tests/live-wallet-browser.cjs"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^7.1.9",
+    "playwright": "^1.58.0"
+  }
+}

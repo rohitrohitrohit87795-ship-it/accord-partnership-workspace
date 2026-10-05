@@ -1,0 +1,31 @@
+{
+  "name": "accord-partnership-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace frontend",
+    "start": "npm run start --workspace backend",
+    "chain": "npm run chain --workspace backend",
+    "compile": "npm run compile --workspace backend",
+    "deploy": "npm run deploy --workspace backend",
+    "test": "npm run test --workspace backend",
+    "test:contracts": "npm run test:contracts --workspace backend",
+    "test:chain-api": "npm run test:chain-api --workspace backend",
+    "auditor": "npm run auditor --workspace backend --",
+    "test:all": "npm run test && npm run test:contracts && npm run test:chain-api && npm run build",
+    "test:browser": "npm run test:browser --workspace frontend",
+    "test:live-browser": "npm run test:live-browser --workspace frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
